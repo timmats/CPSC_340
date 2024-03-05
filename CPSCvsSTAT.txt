@@ -1,0 +1,59 @@
+Below is a summary written Geoff Roeder discussing/comparing various CPSC and STAT courses that cover topics related to machine learning.
+
+>>>START>>>
+
+
+(Disclaimer: the following descriptions and evaluations represent the opinions of a recently graduated combined major in Statistics and Computer Science who is continuing on to graduate school, and who took CPSC 540. They should not be taken as course advising.)
+
+tl;dr:
+
+CPSC 340 covers everything that STAT 306 does and more, but in less detail for the topics that intersect. STAT 306 teaches you how to interpret and communicate linear models first and foremost, whereas CPSC 340 teaches you applications of predictive models first and foremost. STAT 406 falls between CPSC 340 and CPSC 540 in terms of mathematical sophistication required. STAT 406 covers a few topics that CPSC 340 doesn’t, but there is much overlap. STAT 406 goes into much greater mathematical detail, which is useful for understanding models and when/why they work. Similarly, STAT 305 covers the mathematical machinery of statistical inference and is interesting and useful. But, if it were replaced by CPSC 540, you would lose only classical statistical hypothesis testing. Given the opportunity, taking STAT 305, 306, and 406 will greatly enhance an undergraduate machine learning education. If only one can be chosen from the three, STAT 406 will give the most benefit in terms of machine/statistical learning so long as you are comfortable with probability, multivariable calculus, linear algebra, and standard mathematical proof techniques like induction, proof by contradiction, etc. Also, CPSC 340 is (as of Summer 2016) an acceptable prerequisite for STAT 406. STAT 460/461 are cross-listed graduate statistics classes intended for Honours statistics students who have taken an introductory real analysis class (MATH 320). I didn’t take STAT 460 or 461, but there is some overlap with 540 according to the syllabus. My impression from friends who have taken this class is that it's very proofs-based, much like MATH 320.
+
+---
+
+Description. STAT 306: Learning from Data.
+
+STAT 306 begins with simple linear regression, then briefly reviews probability concepts from MATH/STAT 302 like expectation, variance, and covariance, and then covers multivariable regression in detail. Proofs are discussed for multiple linear regression for parameters and confidence intervals in two dimensions. Variable selection for high-dimensional data is briefly touched on using stepwise methods. PCA, logistic regression, Poisson regression / generalized linear models, and clustering are very briefly discussed. Cross validation is mentioned and used in a lab but not discussed in detail. You have the opportunity to do an independent project that applies the methods in the class to a topic of your choosing, as a group. The greatest emphasis in STAT 306 is on understanding and interpreting mixed categorical and quantitative multiple linear and logistic regression models.
+
+Evaluation. STAT 306 offers a more mathematically detailed understanding of linear models than CPSC 340. This comes at the cost of breadth of coverage. CPSC 340 covers the same techniques as STAT 306 with the exception of Poisson regression/generalized linear models, but CPSC 340 covers many more. STAT 306 is better preparation for “STAT 406: Methods for Statistical Learning,” because it emphasizes the details of the mathematics of inference in linear models and how to communicate findings from a model precisely. In general, this course is about accurately forming and interpreting linear models, and prediction from linear/logistic models is in the background.
+
+I relied on what I learned in STAT 306 to build and interpret a complicated linear model (transformed response, 9 dimensions mixed between categorical and continuous features, ~8000 observations) in a report and poster session for a business client in a 4th-year statistical consulting class.
+
+---
+
+Description. STAT 305: Introduction to Statistical Inference.
+
+STAT 305 begins with a review of moment generating functions how they can be used to derive important results about common probability distributions. Then, parameter estimation from statistical models using maximum likelihood estimation versus Bayesian approaches is discussed. Hypothesis testing including the Neyman-Pearson lemma, likelihood ratios, and goodness of fit tests are covered. The course teaches the necessary mathematics for statistical inference and shows real-world case studies in each class that require the theoretical techniques.
+
+Evaluation. STAT 305 covers the method of maximum likelihood in detail, and introduces basic Bayesian inference for distributions using conjugate priors. This overlaps with 540’s treatment of maximum likelihood and early Bayesian content, but STAT 305 goes into far less detail. STAT 305 is valuable for understanding the fundamental mathematical machinery of statistical inference and also when to select one model over another, given a dataset or inferential goal. Regularization and loss functions are noticeably absent from this class, and so the practical techniques you come away with are somewhat rigid and could be difficult to apply usefully to real-world data. CPSC 540 covers the same main frequentist and Bayesian ideas that STAT 305 does, but it cover all all the hypothesis testing and mathematical derivations you would see in STAT 305.
+
+---
+
+Description. STAT406: Methods for Statistical Learning.
+
+STAT 406 begins with a review of the mathematics of linear modelling and then quickly introduces mean square prediction error and cross-validation as a way of findings functions that approximate true distributions using empirical data. Topics covered include Ridge Regression, Lasso, Elastic Nets, Kernel Smoothers, Regression/Classification Trees, Random Forests, Model Ensembles, Boosting, Bagging, SVMs, Linear/Gaussian Discriminate Analysis. Neural Networks were on the syllabus, but we didn’t get to them due to time constraints. Each topic is treated in mathematical detail and students are asked to prove some basic results in the homework. Much of the work in the class comes from the lab assignments, where different statistical learning techniques are applied in the R programming language to a variety of datasets. The labs are interesting and challenging, often consisting of simple problem statements that students must address without a guiding framework (although TAs are on hand to advise).
+
+Evaluation: STAT 406 covers similar (but fewer) topics as the more advanced topics in CPSC 340, but STAT 406 gives more details and dwells more on mathematical analysis. For example, the bias-variance tradeoff in cross validation is derived as part of one of the homeworks in STAT 406, whereas in CPSC 340 the same idea was taught by observing how a plot of the test error “bottoms out” and eventually rises as the training error decreases. STAT 406 is useful for knowing what techniques can work well in particular domains, and also for thinking about what extensions or modifications can be done to existing algorithms to get better results. CPSC 340 and STAT 406 complement each other well. I took both classes concurrently, and this really this enhanced my understanding of learning algorithms. If you skip CPSC 340, though, and take STAT 306/406 only, you’ll miss important implementation details of algorithms that can allow them to work on massive datasets. Also, you’ll only know R implementations, which are all prepackaged, rather than Matlab, which forces you to understand the mathematics behind the ideas.
+
+Students considering STAT 406 should be comfortable with mathematical proofs, and may wish to take STAT 306 to familiarize themselves with the derivation-heavy style of mathematical reasoning in the field of statistics. Proofs in statistics often involve transforming one representation into another much more convenient one. In so doing, you can reveal something surprising and useful about the problem or technique at hand. This style of proof uses a lot of (occasionally tedious) algebra. Real Analysis is a useful mathematical tool for STAT 406, but it is not a prerequisite (much like CPSC 540).
+
+---
+
+Description: CPSC 340: Machine Learning and Data Mining.
+
+CPSC 340 introduces the major ideas in statistical modelling and machine learning at a fast clip, covering a lot of ground in four months. Many of the topics are mentioned briefly but not dwelled on, but pointers to textbooks and websites are provided for anyone who wants to follow up. In the 2015 fall section, little to no statistical or mathematical background beyond basic linear algebra was assumed, and any needed mathematics/probability beyond first-year calculus was introduced during the lectures.
+
+Evaluation:
+
+If you’ve taken STAT 305, STAT 306, and STAT 406, the theoretical content in CPSC 340 will be very familiar. About ¾ of the way through the class, though, interesting advanced statistical topics like neural networks, semi-supervised learning, and inference using Markov chains were introduced. It’s nice to free yourself from doing statistical modelling in R: CPSC 340’s homeworks are done in Matlab with a lot of attention paid to computational complexity. This reveals an important dimension of statistical practice that isn’t covered at all in undergraduate statistics classes: how to code statistical models as practical programs that can take advantage of intelligent data structure choice and clever algorithms (rather than always limiting yourself to the CRAN repositories in R or a Matlab toolbox). If you need to choose between CPSC 340 and STAT 306 and your goal is to apply machine learning, CPSC 340 is a far better choice in terms of the breadth of knowledge you’ll gain.
+
+---
+
+
+Description. CPSC 540: Machine Learning.
+
+This class continues from where CPSC 340 left off and tries to complete an overview of the state of the art by covering many advanced topics in machine learning. The field is big enough that not all topics will fit into two four-month classes (340/540); we didn’t get to reinforcement learning, for example. In 540, proofs of convergence and more sophisticated mathematical tools like dual forms of loss functions and graphical models are introduced and used. The pace is still fast in CPSC 540 and some background in scientific computing and/or optimization (or sufficient time to learn it, quickly!) is very important because advanced optimization techniques are crucial for modern machine learning. The homeworks in CPSC 540 are very lengthy and interesting, and you’ll have the opportunity to do original research on a cutting-edge topic of your choosing.
+
+Evaluation. CPSC 540 covers topics that are similarly at the graduate level in statistics, like the EM algorithm or Bayesian inference (taught in STAT 560/460). No course I’m aware of overlaps substantially with the content, so it’s a great class to aim for if you’re an undergraduate seeking strong exposure to the field of machine learning. CPSC 302, Numerical Methods for Linear Algebra, can probably provide the minimum amount of necessary scientific computing background. Math 307, Applied Linear Algebra, will also provide an introduction to Matlab and intermediate-to-advanced numerical linear algebra that can make CPSC 540’s practical implementation side less overwhelming.
+
+<<<END<<<
